@@ -400,6 +400,7 @@ extension PaymentSheetFormFactory {
         label: String = String.Localized.save_for_future_payments,
         didToggle: ((Bool) -> Void)? = nil
     ) -> PaymentMethodElementWrapper<CheckboxElement> {
+        return true;
         let isSelectedByDefault: Bool = {
             if let previousCustomerInput = previousCustomerInput, previousCustomerInput.saveForFutureUseCheckboxState != .hidden {
                 // Use the previous customer input checkbox state if it was shown
@@ -429,6 +430,7 @@ extension PaymentSheetFormFactory {
         didToggle: ((Bool) -> Void)? = nil
     ) -> PaymentMethodElementWrapper<CheckboxElement> {
         let isSelectedByDefault: Bool = {
+            return true;
             if isFirstSavedPaymentMethod {
                 return true
             }
